@@ -14,6 +14,7 @@ import { adminNavItems } from '@/data/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AdminNavMain } from './admin-nav-main'
+import { AdminNavUser } from './admin-nav-user'
 
 export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -42,7 +43,9 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
       <SidebarContent>
         <AdminNavMain items={adminNavItems} />
       </SidebarContent>
-      <SidebarFooter>sidebar footer</SidebarFooter>
+      <SidebarFooter>
+        <AdminNavUser />
+      </SidebarFooter>
     </Sidebar>
   )
 }
