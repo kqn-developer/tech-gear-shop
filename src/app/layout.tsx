@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import { Metadata } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import './globals.css'
@@ -17,8 +18,12 @@ const be_vietnam_pro = Be_Vietnam_Pro({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='vi'>
-      <body className={be_vietnam_pro.className}>{children}</body>
+    <html lang='vi' suppressHydrationWarning>
+      <body className={be_vietnam_pro.className}>
+        <ThemeProvider attribute='class' defaultTheme='light'>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
