@@ -10,8 +10,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
+import { adminNavItems } from '@/data/data'
 import Image from 'next/image'
 import Link from 'next/link'
+import { AdminNavMain } from './admin-nav-main'
 
 export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -37,7 +39,9 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>sidebar content</SidebarContent>
+      <SidebarContent>
+        <AdminNavMain items={adminNavItems} />
+      </SidebarContent>
       <SidebarFooter>sidebar footer</SidebarFooter>
     </Sidebar>
   )
