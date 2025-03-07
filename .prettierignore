@@ -1,0 +1,38 @@
+# Node modules and dependencies
+node_modules
+.next
+out
+
+# Build artifacts
+dist
+coverage
+public
+
+# Environment and config files
+.env
+.env.local
+.env.*.local
+
+# Lock files (optional, depends on your team preference)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+README.md
+
+
+# Logs and cache
+.npm
+.pnp
+.pnp.js
+.cache
+.vercel
+.docusaurus
+
+# TypeScript build files
+*.d.ts
+
+# Misc
+.DS_Store
+.vscode
+.idea
