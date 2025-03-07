@@ -1,5 +1,6 @@
 'use client'
 
+import { AspectRatio } from '@/components/ui/aspect-ratio'
 import {
   Sidebar,
   SidebarContent,
@@ -9,6 +10,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -17,7 +20,19 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size='lg' asChild>
-              <a href='#'>sidebar button</a>
+              <Link href='/admin'>
+                <div className='bg-foreground dark:bg-background flex size-8 items-center justify-center overflow-hidden rounded-sm'>
+                  <div className='size-5'>
+                    <AspectRatio ratio={1}>
+                      <Image src={'/vercel.svg'} alt='logo' fill className='h-full w-full object-contain' />
+                    </AspectRatio>
+                  </div>
+                </div>
+                <div className='grid flex-1 text-left text-sm leading-tight'>
+                  <span className='truncate font-semibold'>Tech Gear</span>
+                  <span className='truncate text-xs'>Administration</span>
+                </div>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
