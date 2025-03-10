@@ -1,5 +1,5 @@
 import { AdminNavItem } from '@/types/types'
-import { Box, ChartNoAxesCombined, LayoutDashboard, ReceiptText } from 'lucide-react'
+import { Box, ChartNoAxesCombined, LayoutDashboard, ReceiptText, Users } from 'lucide-react'
 
 export const adminNavItems: AdminNavItem[] = [
   {
@@ -14,12 +14,27 @@ export const adminNavItems: AdminNavItem[] = [
   },
   {
     title: 'Sản phẩm',
-    url: '#',
+    url: '/admin/products',
     icon: Box,
+    items: [
+      {
+        title: 'Tất cả',
+        url: '#',
+      },
+      {
+        title: 'Danh mục',
+        url: '#',
+      },
+    ],
   },
   {
     title: 'Đơn hàng',
     url: '#',
     icon: ReceiptText,
+  },
+  {
+    title: 'Thành viên',
+    url: '#',
+    icon: Users,
   },
 ]
