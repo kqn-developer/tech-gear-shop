@@ -1,6 +1,7 @@
 'use client'
 
 import { Checkbox } from '@/components/ui/checkbox'
+import { formatCurrency } from '@/lib/utils'
 import { Product } from '@/types/types'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -47,5 +48,9 @@ export const columns: ColumnDef<Product>[] = [
   {
     accessorKey: 'price',
     header: 'Giá',
+    cell: ({ row }) => {
+      const formattedPrice = formatCurrency(row.original.price)
+      return <div>{formattedPrice}</div>
+    },
   },
 ]
