@@ -3,6 +3,8 @@
 import { Checkbox } from '@/components/ui/checkbox'
 import { Product } from '@/types/types'
 import { ColumnDef } from '@tanstack/react-table'
+import Image from 'next/image'
+import { AspectRatio } from '../ui/aspect-ratio'
 
 export const columns: ColumnDef<Product>[] = [
   {
@@ -27,6 +29,16 @@ export const columns: ColumnDef<Product>[] = [
   {
     accessorKey: 'thumbnail',
     header: 'Thumbnail',
+    cell: ({ row }) => {
+      const src = row.original.thumbnail
+      return (
+        <div className='w-[80px] overflow-hidden rounded-md'>
+          <AspectRatio ratio={16 / 9}>
+            <Image src={src} alt='' fill className='h-full w-full object-cover' />
+          </AspectRatio>
+        </div>
+      )
+    },
   },
   {
     accessorKey: 'name',
