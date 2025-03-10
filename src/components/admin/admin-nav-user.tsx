@@ -1,17 +1,17 @@
 'use client'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/components/ui/sidebar'
-import { ChevronsUpDown, CircleUserRound, LogOut } from 'lucide-react'
+import { ChevronsUpDown, LogOut } from 'lucide-react'
+import AdminAccount from './admin-account'
 
 const user = {
   name: 'Edmond Will',
@@ -59,17 +59,16 @@ export function AdminNavUser() {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <CircleUserRound />
-                Tài khoản
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
+            {/* Dialog */}
+            <AdminAccount />
+            {/* end dialog */}
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <Button
+              className='h-auto w-full cursor-pointer justify-start px-2 py-1.5 text-sm font-normal'
+              variant={'ghost'}>
               <LogOut />
               Thoát
-            </DropdownMenuItem>
+            </Button>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
