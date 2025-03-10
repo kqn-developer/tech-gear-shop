@@ -6,3 +6,10 @@ export type AdminNavItem = {
   icon?: LucideIcon
   items?: AdminNavItem[]
 }
+
+export type Product = {
+  id: string
+  name: string
+  price: number
+  thumbnail: string
+}
