@@ -44,6 +44,9 @@ export const columns: ColumnDef<Product>[] = [
   {
     accessorKey: 'name',
     header: 'Tên sản phẩm',
+    cell: ({ row }) => {
+      return <div className='w-[350px] truncate'>{row.original.name}</div>
+    },
   },
   {
     accessorKey: 'price',
